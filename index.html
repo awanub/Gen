@@ -2,12 +2,15 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>GEN — Flashcards</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 
@@ -37,8 +40,6 @@
 
         </div>
 
-
-        <!-- Solo aparece en celular -->
 
         <button
             id="menuBtn"
@@ -82,8 +83,6 @@
                 </div>
 
 
-                <!-- Solo celular -->
-
                 <button
                     id="closeSidebar"
                     class="close-btn">
@@ -96,9 +95,12 @@
 
 
 
-            <!-- FILTROS -->
+            <!-- =========================
+                 FILTROS
+                 ========================= -->
 
             <div class="filters">
+
 
                 <button
                     class="filter active"
@@ -153,11 +155,25 @@
 
                 </button>
 
+
+                <!-- NUEVA CLASE -->
+
+                <button
+                    class="filter"
+                    data-filter="transformation">
+
+                    Transformación genética
+
+                </button>
+
+
             </div>
 
 
 
-            <!-- LISTA DE FLASHCARDS -->
+            <!-- =========================
+                 LISTA DE FLASHCARDS
+                 ========================= -->
 
             <div
                 id="cardList"
@@ -176,8 +192,6 @@
 
         <main class="main">
 
-
-            <!-- TÍTULO PEQUEÑO -->
 
             <div class="study-header">
 
@@ -215,8 +229,6 @@
                 class="flashcard">
 
 
-                <!-- PARTE SUPERIOR -->
-
                 <div class="card-top">
 
 
@@ -239,8 +251,6 @@
                 </div>
 
 
-
-                <!-- PREGUNTA -->
 
                 <div class="question-label">
 
@@ -268,8 +278,6 @@
                 </div>
 
 
-
-                <!-- BOTÓN -->
 
                 <button
                     id="showAnswer"
@@ -308,10 +316,9 @@
 
 
 
-                <!-- BARRA -->
-
                 <div
                     class="slider-container">
+
 
                     <input
                         id="slider"
@@ -333,6 +340,7 @@
 
                     </div>
 
+
                 </div>
 
 
@@ -350,11 +358,10 @@
 
 
 
-            <!-- AYUDA -->
-
             <p class="keyboard-hint">
 
                 Tip:
+
                 también puedes usar
 
                 <kbd>←</kbd>
@@ -374,7 +381,9 @@
 
 
 
-    <!-- OSCURECE LA PANTALLA EN CELULAR -->
+    <!-- =========================
+         OVERLAY PARA CELULAR
+         ========================= -->
 
     <div
         id="overlay"
@@ -384,9 +393,12 @@
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
 
     <script src="script.js"></script>
+
 
 </body>
 
