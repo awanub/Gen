@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GEN — Flashcards</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+         ========================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🧬
+            </div>
+
+            <div>
+
+                <h1>GEN</h1>
+
+                <p>
+                    Flashcards · PCR · Clonación · Construcciones
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Solo aparece en celular -->
+
+        <button
+            id="menuBtn"
+            class="menu-btn">
+
+            ☰
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         ESTRUCTURA PRINCIPAL
+         ========================= -->
+
+    <div class="layout">
+
+
+        <!-- =========================
+             SIDEBAR
+             ========================= -->
+
+        <aside
+            id="sidebar"
+            class="sidebar">
+
+
+            <div class="sidebar-title">
+
+                <div>
+
+                    <strong>
+                        FLASHCARDS
+                    </strong>
+
+                    <span id="totalCards">
+                    </span>
+
+                </div>
+
+
+                <!-- Solo celular -->
+
+                <button
+                    id="closeSidebar"
+                    class="close-btn">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <!-- FILTROS -->
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-filter="all">
+
+                    Todas
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="basics">
+
+                    🧬 ADN
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="pcr">
+
+                    🌡️ PCR
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="cloning">
+
+                    ✂️ Clonación
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="construction">
+
+                    🏗️ Expresión
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="reasoning">
+
+                    💡 Casos
+
+                </button>
+
+            </div>
+
+
+
+            <!-- LISTA DE FLASHCARDS -->
+
+            <div
+                id="cardList"
+                class="card-list">
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =========================
+             CONTENIDO PRINCIPAL
+             ========================= -->
+
+        <main class="main">
+
+
+            <!-- TÍTULO PEQUEÑO -->
+
+            <div class="study-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        MODO ESTUDIO
+                    </span>
+
+                    <h2>
+                        Repasa una tarjeta a la vez
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="counterPill"
+                    class="counter-pill">
+
+                    1 / 1
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FLASHCARD
+                 ========================= -->
+
+            <section
+                id="flashcard"
+                class="flashcard">
+
+
+                <!-- PARTE SUPERIOR -->
+
+                <div class="card-top">
+
+
+                    <span
+                        id="category"
+                        class="category">
+
+                    </span>
+
+
+                    <span
+                        id="application"
+                        class="application hidden">
+
+                        🎯 Aplicación
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- PREGUNTA -->
+
+                <div class="question-label">
+
+                    PREGUNTA
+
+                </div>
+
+
+                <h3 id="question">
+
+                    Cargando...
+
+                </h3>
+
+
+
+                <!-- =========================
+                     RESPUESTA
+                     ========================= -->
+
+                <div
+                    id="answer"
+                    class="answer hidden">
+
+                </div>
+
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    id="showAnswer"
+                    class="show-answer">
+
+                    <span>
+                        Mostrar respuesta
+                    </span>
+
+                    <span>
+                        ↓
+                    </span>
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =========================
+                 NAVEGACIÓN
+                 ========================= -->
+
+            <nav
+                class="navigation">
+
+
+                <button
+                    id="previous"
+                    class="nav-button">
+
+                    ← Anterior
+
+                </button>
+
+
+
+                <!-- BARRA -->
+
+                <div
+                    class="slider-container">
+
+                    <input
+                        id="slider"
+                        type="range"
+                        min="0"
+                        max="0"
+                        value="0">
+
+
+                    <div class="slider-text">
+
+                        <span>
+                            Desliza para cambiar
+                        </span>
+
+                        <strong id="progress">
+                            1 / 1
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    id="next"
+                    class="nav-button">
+
+                    Siguiente →
+
+                </button>
+
+
+            </nav>
+
+
+
+            <!-- AYUDA -->
+
+            <p class="keyboard-hint">
+
+                Tip:
+                también puedes usar
+
+                <kbd>←</kbd>
+
+                <kbd>→</kbd>
+
+                y
+
+                <kbd>Espacio</kbd>
+
+            </p>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- OSCURECE LA PANTALLA EN CELULAR -->
+
+    <div
+        id="overlay"
+        class="overlay">
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
